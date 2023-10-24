@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>照片墙</title>
+    <link rel="stylesheet" href="照片墙.css">
+</head>
+<body>
+  <!-- 头部导航栏 -->
+  <!-- 博客没有logo -->
+  <div class="top">
+      <span class="title">我的博客</span>
+      <div class="blank"></div>
+      <div class="blank2"></div>
+      <a href="file:///D:/HTMLCSS/%E6%96%87%E7%AB%A0%E6%9F%A5%E6%89%BE.html" alt="显示失败">文章查找</a>  
+      <a href="file:///D:/HTMLCSS/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D.html" alt="显示失败">个人简介</a>            
+      <a href="file:///D:/HTMLCSS/%E7%85%A7%E7%89%87%E5%A2%99.html" alt="显示失败">照片墙</a>
+      <a href="file:///D:/HTMLCSS/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95.html" alt="显示失败">做题记录</a>
+  </div>
+  <div class="pics">
+    <ul id="picList">
+      <li><a href="#"><img src="zipai.jpg" alt=""></a></li> 
+      <li><a href="#"><img src="zhaopian1.jpg" alt=""></a></li>   
+      <li><a href="#"><img src="zhaopian2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="zhaopian3.jpg" alt=""></a></li> 
+      <li><a href="#"><img src="zhaopian4.jpg" alt=""></a></li>
+      <li><a href="#"><img src="zhaopian5.jpg" alt=""></a></li>
+      </ul>
+  </div>
+  <script>
+    let ul = document.getElementById("picList");
+    let lies = ul.children ;
+    // 给该标签添加 "active" 类，可以改变其样式以表示当前激活状态。
+    lies[0].classList.add("active");
+    // 查找兄弟标签函数
+    let findSiblings = function(tag){
+      let parent = tag.parentNode ;
+      let child = parent.children ;
+      let sb = [];
+      for(let i = 0 ; i <= child.length-1 ; i++ ){
+        if( tag !== child[i]){
+          sb.push( child[i]);
+        }
+      }
+      return sb ;
+    };
+  for( let i = 0 ; i <= lies.length-1 ; i++  ){
+    lies[i].addEventListener("mouseenter",function(){
+      let siblings = findSiblings(this);
+      // 当前标签变宽: 增加类 active
+      this.classList.add("active");
+      // 兄弟标签变窄
+      for(let k = 0 ; k <= siblings.length-1 ; k++ ){
+      // 兄弟标签去掉 active
+      siblings[k].classList.remove("active");
+      }
+    }
+  );
+}
+</script>
+</body>
+</html>

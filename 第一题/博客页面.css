@@ -1,0 +1,148 @@
+/* 清除默认设置 */
+*{
+    list-style:none;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    background-image: url(beijing.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.top{
+    height:50px;
+    background-color: rgba(50,50,50,0.4);/*半透明设置 */
+    justify-content:flex-left;
+    align-items:center;
+    display:flex;
+    position: fixed;  /* 设置元素为固定定位 */
+    top: 0;  /* 将元素顶部对齐页面顶部 */
+    left: 0;  /* 将元素左侧对齐页面左侧 */        width: 100%;  /* 设置元素宽度为100% */
+      
+}
+.title{
+    color:white;
+    font-size:30px;
+    font-family:"微软雅黑";
+    font-weight:500;
+    text-align:left;
+    text-decoration:none;
+}
+.top .blank{
+    width:60%;
+}
+.top .blank2{
+    width:7%;
+}
+.top a{
+    text-align:none;
+    color:white;
+    padding:10px;
+    font-size:20px;
+    text-decoration:none;
+}
+/* 主页设计 */
+.container{
+    width:1200px;
+    margin:0 auto;/*水平居中 */
+    height:calc(100%-100px);
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+    margin-top:50px;
+}
+.container .left{
+    height:100%;
+    width:300px;
+    background-color: rgba(238, 232, 232, 0.4);
+    border-radius: 20%;
+}
+.container .right{
+    height:100%;
+    width:800px;
+    padding:20px;
+    border-radius: 20%;
+    overflow:auto;/*添加滚动条 */
+    background-color: rgba(238, 232, 232, 0.4);
+    overflow-y: scroll;  /* 设置垂直方向上出现滚动条 */
+    height: 100vh;  /* 将右侧容器的高度设置为屏幕高度 */
+}
+::-webkit-scrollbar {/*隐藏滚动条*/
+    display:none;
+  }
+/* 左部内容设计 */
+.introduction{
+    padding:20px;
+    
+}
+.introduction .ID{
+    display:flex;
+    padding:30px;
+}
+.introduction .ID img{
+    margin-left:20px;
+    margin-right:30px;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+.introduction .blank{
+    height:60%;
+}
+.introduction .counter{
+    display:left;
+    justify-content:space-between;
+    padding:15px;
+}
+.counter a{
+    text-decoration:none;
+    color:black;
+    font-size:20px;
+}
+/* 右部内容设计 */
+.blog{
+    padding:20px;
+}
+.blog .title_blog{
+    color:black;
+    font-size:25px;
+    font-weight:700;
+    justify-content:space-around;
+    text-align:center;
+}
+.blog .date{
+    color:rgb(57, 55, 55);
+    font-size:15px;
+    justify-content:center;
+    text-align:center;
+}
+.blog .passage{
+    text-indent:2em;
+    font-size:20px;
+    color:black;
+    justify-content:flex-left;
+    text-overflow:ellipsis;/*使用省略号*/
+    overflow:hidden;/*溢出隐藏*/
+    white-space:nowrap;/*强制不换行*/
+}
+.blog a{
+    display:block;
+    width:100px;
+    height:40px;
+    margin:auto;
+    text-align:center;
+    line-height:40px;
+    color:black;
+    text-decoration: none;
+    border:2px solid black;
+}
+.blog a:hover{
+    background-color: black;
+    color:white;
+}

@@ -1,0 +1,90 @@
+/* 清除默认设置 */
+*{
+  list-style:none;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html{
+  height:100%;
+}
+body{
+  height:100%;
+  background-image: url(beijing.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+}
+.top{
+  height:50px;
+  background-color: rgba(50,50,50,0.4);/*半透明设置 */
+  justify-content:flex-left;
+  align-items:center;
+  display:flex;
+  position: fixed;  /* 设置元素为固定定位 */
+  top: 0;  /* 将元素顶部对齐页面顶部 */
+  left: 0;  /* 将元素左侧对齐页面左侧 */        width: 100%;  /* 设置元素宽度为100% */
+    
+}
+.title{
+  color:white;
+  font-size:30px;
+  font-family:"微软雅黑";
+  font-weight:500;
+  text-align:left;
+  text-decoration:none;
+}
+.top .blank{
+  width:60%;
+}
+.top .blank2{
+  width:7%;
+}
+.top a{
+  text-align:none;
+  color:white;
+  padding:10px;
+  font-size:20px;
+  text-decoration:none;
+}
+ul,li{
+  list-style: none;
+ }
+img{
+  border:none;
+}
+.pics{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:100px; 
+  height: 400px;
+  overflow: hidden;
+}
+.pics ul{
+  display: flex;  
+  justify-content: space-between;
+}
+.pics ul li{
+  width: 100px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  transition:all 0.4s;   /* 过渡动画 */
+  flex-grow: 1;   /* 让 li 始终能占满整个 ul ，保证变化过程中 li 之间没有缝隙 */
+}
+.pics ul li img{
+  position: absolute;
+  left:50%;
+  top:0;
+  margin-left: -300px;
+}
+.pics ul li.active{    /* 有类 active li 宽度为 600px。去掉，就会恢复 100px */
+  width: 600px;
+}
+.pics ul li img{
+  position: absolute;
+  left:50%;
+  top:0;
+  margin-left: -300px;/*实现吟唱元素的效果*/
+}

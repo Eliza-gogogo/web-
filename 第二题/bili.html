@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</title>
+		<meta name="description" content="bilibili是国内知名的
+			视频弹幕网站" />
+		<meta name="keywords" content="Bilibili,哔哩哔哩,哔哩
+			哔哩动画,哔哩哔哩弹幕网,弹幕视频" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		<script src="bili.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="bg">
+				<div id="navbar" class="nav">
+					<div class="nav-content">
+						<div class="nav-link">
+						  <ul class="nav-link-ul">
+							<li class="nav-link-item">
+							  <a href="#">首页</a>
+							</li>
+							<li class="nav-link-item">
+							  <a href="#">番剧</a>
+							</li>
+							<li class="nav-link-item nav-link-dropdown-parent">
+							  <a href="#">直播</a>
+							  <div class="nav-dropdown">
+								<img src="zhibo.png" alt=""/>
+							  </div>
+							</li>
+							<li class="nav-link-item nav-link-dropdown-parent">
+							  <a href="#">游戏中心</a>
+							  <div class="nav-dropdown">
+								<img src="youxizhongxin.png" alt=""/>
+							  </div>
+							</li>
+							<li class="nav-link-item">
+							  <a href="#">会员购</a>
+							</li>
+							<li class="nav-link-item nav-link-dropdown-parent">
+							  <a href="#">漫画</a>
+							  <div class="nav-dropdown">
+								<img src="manhua.jpg" alt=""/>
+							  </div>
+							</li>
+							<li class="nav-link-item">
+							  <a href="#">赛事</a>
+							</li>
+							<li class="nav-link-item">
+							  <a href="#">S13</a>
+							</li>
+							<li class="nav-link-item">
+							  <span>
+								<div class="nav-link-dropdown-parent">
+								  <img class="nav-link-item-img " src="./images/iphone.png" alt=""/>
+								  下载客户端
+								  <div class="nav-dropdown">
+									<img src="xiazaikehuduan.png" alt=""/>
+								  </div>
+								</div>
+							  </span>
+							</li>
+						  </ul>
+						</div>
+                    <div class="nav-search-box">
+                      <div class="nav-search">
+                        <form id="nav-searchform">
+                          <input class="search-input" type="text" placeholder="张踩玲"/>
+                          <div class="nav-search-btn">
+                            <button>
+                              搜索
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="nav-user-center">
+						<ul class="user-con">
+						  <li class="item">
+							<a href="#">大会员</a>
+						  </li>
+						  <li class="item user-login-parent">
+							<a href="#">消息</a>
+							<div class="nav-dropdown2">
+							  <img src="denglu.png" alt=""/>
+							</div>
+						  </li>
+						  <li class="item user-login-parent">
+							<a href="#">动态</a>
+							<div class="nav-dropdown2">
+							  <img src="denglu.png" alt=""/>
+							</div>
+						  </li>
+						  <li class="item user-login-parent">
+							<a href="#">收藏</a>
+							<div class="nav-dropdown2">
+							  <img src="denglu.png" alt=""/>
+							</div>
+						  </li>
+						  <li class="item user-login-parent">
+							<a href="#">历史</a>
+							<div class="nav-dropdown2">
+							  <img src="denglu.png" alt=""/>
+							</div>
+						  </li>
+						  <li class="item user-login-parent">
+							<a href="#">创作中心</a>
+						  </li>
+						  <li class="item">
+							<div>
+								<span class="upload">投稿</span>
+							  </div>
+							</div>
+						  </li>
+						</ul>
+                    </div>
+                </div>
+                <div class="bili-logo">
+                    <div class="logo">
+                      <div class="b-logo">
+                        <a href="https://www.bilibili.com/">
+                        <img class="logo-img" src="https://i0.hdslb.com/bfs/archive/622017dd4b0140432962d3ce0c6db99d77d2e937.png" alt=""/>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+		  </div>
+		<nav>
+			<div class="nav-left">
+				<ul>
+					<li>
+						<a href="https://www.bilibili.com/v/channel/218245?spm_id_from=333.851.b_7072696d61727950616765546162.4&tab=multiple" target="_blank">
+							热门
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/ranking?spm_id_from=333.851.b_7072696d61727950616765546162.3" target="_blank">
+							动态
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-middle">
+				<ul>
+					<li>
+						<a href="https://www.bilibili.com/v/douga/?spm_id_from=333.851.b_7072696d6172794368616e6e656c4d656e75.1" target="_blank">
+							<span>番剧</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/music/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.9" target="_blank">
+							<span>国创</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/dance/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.24" target="_blank">
+							<span>综艺</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/technology/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.45" target="_blank">
+							<span>动画</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/life/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.57" target="_blank">
+							<span>鬼畜</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/fashion/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.77" target="_blank">
+							<span>舞蹈</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/ent/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.83" target="_blank">
+							<span>娱乐</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/cinema/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.96" target="_blank">
+							<span>科技</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/life/animal#/" target="_blank">
+							<span>美食</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/game/stand_alone#/"target="_blank">
+							<span>电影</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/anime/?spm_id_from=333.6.b_7072696d6172794368616e6e656c4d656e75.8" target="_blank">
+							<span>电视剧</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/guochuang/?spm_id_from=666.4.b_7072696d6172794368616e6e656c4d656e75.26" target="_blank"></a>
+						<span>纪录片</span>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/game/?spm_id_from=666.5.b_7072696d6172794368616e6e656c4d656e75.34" target="_blank">
+							<span>游戏</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/digital/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.49"target="_blank">
+							<span>音乐</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/kichiku/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.68" target="_blank">
+							<span>影视</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/information/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.83" target="_blank">
+							<span>知识</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/cinephile/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.87" target="_blank">
+							<span>资讯</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.bilibili.com/v/life/funny#/" target="_blank">
+							<span>更多</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<ul>
+					<li>
+						<a href="">专栏</a>
+					</li>
+					<li>
+						<a href="">活动</a>
+					</li>
+					<li>
+						<a href="">社区中心</a>
+					</li>
+					<li>
+						<a href="">直播</a>
+					</li>
+					<li>
+						<a href="">课堂</a>
+					</li>
+					<li>
+						<a href="">新歌热榜</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<article>
+			<div class="article-left">
+			</div>
+			<div class="article-middle">
+				<div class="article-middle-center">
+					<div class="article-middle-center-left">
+						<div class="image">
+							<img src="beijing.jpg" alt="">
+							<img src="beijing.jpg" alt="">
+							<img src="beijing.jpg" alt="">
+							<img src="beijing.jpg" alt="">
+							<img src="beijing.jpg" alt="">
+						</div>
+					</div>
+					<div class="article-middle-center-right">
+						<ul>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video" src="shipin1.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text">
+									  <div id="video-info">
+                                     播放量:9.9万   评论:229   .      02:23
+                                      </div>
+							      </div>	
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV1B34y1u7oo/?spm_id_from=333.1007.tianma.4-4-14.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>狗傻气大<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>萌宠治愈屋</span>
+											<span>.</span>
+											<span>10-11<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								<!--video视频标签，给上宽高-->
+								<video id="my-video" src="jianyv.mp4" width="250px" height="150px"></video>
+                                <div class="video-text">
+									<div id="video-info">
+                                   播放量:21.6万   评论:252   .     01:03
+                                    </div>
+							    </div>
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV1NB4y1f7NL/?spm_id_from=333.1007.tianma.11-4-42.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>四川监狱纯狱风宣传片火了<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>4A广告网</span>
+											<span>.</span>
+											<span>10-16<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								<!--video视频标签，给上宽高-->
+								<video id="my-video" src="shipin3.mp4" width="250px" height="150px"></video>
+                                <div class="video-text">
+									<div id="video-info">
+                                   播放量:55.6万   评论:910 .         02:53
+                                    </div>
+							    </div>
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV15g4y1d7Cp/?spm_id_from=333.1007.tianma.3-3-9.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>人会在25岁随机获得一个debuff<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>叫我死盖就好</span>
+											<span>.</span>
+											<span>10-23<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								<!--video视频标签，给上宽高-->
+								<video id="my-video" src="wangyangming.mp4" width="250px" height="150px"></video>
+                                <div class="video-text">
+									<div id="video-info">
+                                   播放量:57.3万   评论:379  .       06:51
+                                    </div>
+							    </div>
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV1P34y1P79w/?spm_id_from=333.1007.tianma.4-4-14.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>“悬溺一响 阳明登场”龙场悟道，照亮了历史的天空<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>刀笔吏雨果</span>
+											<span>.</span>
+											<span>9-26<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								<!--video视频标签，给上宽高-->
+								<video id="my-video" src="pipi.mp4" width="250px" height="150px"></video>
+                                <div class="video-text">
+									<div id="video-info">
+                                   播放量:2.4万   评论:4 .        00:28
+                                    </div>
+								</div>
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV1bm4y1k7b8/?spm_id_from=autoNext&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>屁屁封印术<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>塑料兄弟咩咩包</span>
+											<span>.</span>
+											<span>3-23<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								<!--video视频标签，给上宽高-->
+								<video id="my-video" src="dongwu.mp4" width="250px" height="150px"></video>
+                                <div class="video-text">
+									<div id="video-info">
+                                   播放量:33.6万   评论:152         01:58
+                                    </div>
+							    </div>
+							    <div class="link">
+								  <a href="https://www.bilibili.com/video/BV17w411k7a6/?spm_id_from=333.1007.tianma.16-1-59.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>乌！蒙！山！连！着！山！外！山！<br>
+									</p>
+									<div class="jieshao">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>幸运猎手</span>
+											<span>.</span>
+											<span>10-13<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 下部分视频 -->
+			<div class="article-down">
+				<div class="article-down-center">
+						<ul>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="shengming.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:1.7万   评论:6 .      05:10
+                                      </div>
+							      </div>	
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1Bw411y77c/?spm_id_from=333.1007.tianma.18-3-69.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>“付之一炬吧，我贱烂的生命。”丨犬儒《志铭》×《大象》<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>老台</span>
+											<span>.</span>
+											<span>10-07<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="xiaogou.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:25.9万   评论:113 .        01:09
+                                      </div>
+							      </div>	
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV13w411c7Lq/?spm_id_from=333.1007.tianma.22-1-83.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>‘都是第一次当狗凭啥让着你’<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>萌宠调查局</span>
+											<span>.</span>
+											<span>10-12<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="dayi.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:10.0万   评论:26    .     01:19
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1cN4y1Z7yr/?spm_id_from=333.1007.tianma.22-4-86.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>不能在同龄人中显嫩，就在大姨中显年轻 #搞笑 #神评论<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>笑哥屁</span>
+											<span>.</span>
+											<span>10-09<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="jvdagongcheng.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:92.1万   评论:1.7万    .     08:47
+                                      </div>
+							      </div>	
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1Ks411R77j/?spm_id_from=autoNext&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>【Minecraft】单人巨大工程★一部关于成长的童话★<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>VarietyAir</span>
+											<span>.</span>
+											<span>2015-12-31<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="xindong.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:5.0万   评论:13      .   03:55
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1L8411C7Q1/?spm_id_from=333.1007.tianma.30-3-91.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>“世人万千种，浮云莫去求。斯人若彩虹，遇上方知有。”【怦然心动】<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>浔辞酒柒</span>
+											<span>.</span>
+											<span>10-01<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="fuke.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:8.5万   评论:122     .    05:33
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1Bw411w7bx/?spm_id_from=333.1007.tianma.32-1-95.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>生命中无法复刻的瞬间，他回来看如今盛世，看世间轮回<br>
+									</p>
+									<div class="jieshao2">秦兔兔tuu</span>
+											<span>.</span>
+											<span>10-06<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="xiaohai.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:19.8万   评论:113 .       03:29
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1yG411m7gD/?spm_id_from=333.1007.tianma.33-1-98.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>小小年纪就学会了察言观色，江湖不只有打打杀杀<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>亿点八卦</span>
+											<span>.</span>
+											<span>10-07<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="pote.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:78.4万   评论:3717     .    01:27
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV19u411c7ty/?spm_id_from=333.1007.tianma.34-1-101.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>“按F键逃离麻瓜世界”<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>栗芝船</span>
+											<span>.</span>
+											<span>09-19<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="shuiage.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:7.5万   评论:51.        01:08
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1Tw411A7KG/?spm_id_from=333.1007.tianma.35-1-104.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>不是我说你们演小丑的，一个个都有颜值牛逼症嘛？？？<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>陆陆容年</span>
+											<span>.</span>
+											<span>10-09<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="maerfu.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:1.8万   评论:6        02:08
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1B34y1u7oo/?spm_id_from=333.1007.tianma.4-4-14.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>“我那又菜又爱玩，又经常爱吃瘪的小少爷”<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>汝愿安年</span>
+											<span>.</span>
+											<span>10-04<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="wawayv.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:5455   评论:3   .     05:09
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1yN41147d6/?spm_id_from=333.1007.tianma.4-1-11.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>娃娃鱼是娃娃也不是娃娃。他什么都懂！<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>每天都嗨皮ya</span>
+											<span>.</span>
+											<span>10-16<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="daixuesheng.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:5.9万   评论:22      .   01:17
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1im4y1g7PF/?spm_id_from=333.1007.tianma.6-2-20.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>大型纪录片《热爱跑步的大学生》<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>天天纪录片传奇</span>
+											<span>.</span>
+											<span>10-12<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="deshan.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:3.6万   评论:1   .     03:26
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1FN4y1C7Wx/?spm_id_from=333.1007.tianma.7-4-26.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>德善又被揍一顿，宝拉可真够凶的，后面吓的正峰都发抖，哈哈<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>臧老师好</span>
+											<span>.</span>
+											<span>10-18<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="banjiang.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:9.2万   评论:46        02:24
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1mG41117dY/?spm_id_from=333.1007.tianma.13-4-50.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>请回答1988 颁奖仪式<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>火竹心</span>
+											<span>.</span>
+											<span>10-16<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+							<li>
+								  <!--video视频标签，给上宽高-->
+								  <video id="my-video2" src="tainv.mp4" width="250px" height="150px"></video>
+                                  <div class="video-text2">
+									  <div id="video-info2">
+                                     播放量:6.1万   评论:99.         01:07
+                                      </div>
+							      </div>
+							    <div class="link2">
+								  <a href="https://www.bilibili.com/video/BV1B34y1u7oo/?spm_id_from=333.1007.tianma.4-4-14.click&vd_source=af44acc0f68d984cecf54f1cde30a5af">
+									<p>
+										<span>千万别招惹泰国女人，路过的狗都得挨俩嘴巴子<br>
+									</p>
+									<div class="jieshao2">
+											<span style="border: 1px solid rgb(84, 82, 82);border-radius: 3px">up</span>杨大仙儿影视剪辑</span>
+											<span>.</span>
+											<span>10-04<br>
+									</div>
+								  </a>
+							    </div>
+							</li>
+						</ul>
+				</div>
+			</div>
+		</article>
+	<link rel="stylesheet" href="bili.css" type="text/css" />
+	<script type="text/javascript" src="bili.js"></script>
+	</body>
+
+</html>

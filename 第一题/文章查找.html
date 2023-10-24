@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>我的博客网页</title>
+    <link rel="stylesheet" href="博客页面.css">
+    <style>
+        .right{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+  <div class="top">
+    <span class="title">我的博客</span>
+    <div class="blank"></div>
+    <div class="blank2"></div>
+    <a href="file:///D:/HTMLCSS/%E6%96%87%E7%AB%A0%E6%9F%A5%E6%89%BE.html" alt="显示失败">文章查找</a>  
+    <a href="file:///D:/HTMLCSS/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D.html" alt="显示失败">个人简介</a>            
+    <a href="file:///D:/HTMLCSS/%E7%85%A7%E7%89%87%E5%A2%99.html" alt="显示失败">照片墙</a>
+    <a href="file:///D:/HTMLCSS/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95.html" alt="显示失败">做题记录</a>
+  </div>
+    <!-- 页面主区域 -->
+    <div class="container">
+        <!-- 左部 -->
+        <div class="left">
+            <!-- 信息页面 -->
+            <div class="introduction">
+              <div class="ID">
+                  <img src="touxiang.jpg" ait="" title="我的头像">
+                  <h2>咸鱼</h2>
+              </div>
+              <div class="blank"></div>
+              <div class="counter">
+                  <a href="file:///D:/HTMLCSS/%E7%85%A7%E7%89%87%E5%A2%99.html">照片墙</a>
+                  <a href="file:///D:/HTMLCSS/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D.html">个人简介</a>
+                  <a href="file:///D:/HTMLCSS/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95.html">做题记录</a>
+              </div>
+          </div>
+        </div>
+        <!-- 右部 -->
+        <div class="right">
+            <input type="text" id="keyword" placeholder="请输入关键词">
+            <button onclick="search()">搜索</button>
+            <ul id="results"></ul>
+        </div>
+    </div>
+    <script>
+        var articles = [
+          {
+            title: '《肖申克的救赎》分享',
+            content: '电影讲述了一个银行家安迪因被冤枉谋杀妻子和她的情人而被判刑服刑的经历。在监狱里，安迪遇到了一个与他截然不同的黑人囚犯雷德，两人开始了一段特殊的友谊之旅。雷德帮助安迪逐渐适应了监狱的生活，并且在安迪阅读和学习的过程中，为他提供了很多帮助和支持。而安迪则通过自己在银行工作的经验，帮助了监狱里的管理层进行财务方面的工作。最终，安迪在狱中度过了20多年的牢狱生涯后，凭借他的勇气、智慧和毅力，成功地逃狱，并且将真相揭露出来。.n'+
+
+                    '影片通过对主角们生活的细腻刻画，表达了许多深刻的思想及价值观。电影的最大亮点是它深刻描绘了人的心理变化和精神气质。安迪在警方找上门的时候，他的表现自然而然，平静而从容，这种从容中透露出的淡定与自信令人佩服。他坚持自己的理念，并教导雷德不要丧失人性的尊严，这种精神力量为人在困难时期带来了无穷的力量。\n'+
+
+                    '另外，格局是电影的另一大亮点，它传递出了关于人生选择和自由的智慧。影片中形形色色的角色和他们各自的处境，表达了人类面对压迫和奴役时挣扎求生的本能。在狱中，雷德致力于改善自己和其他犯人们的生活品质，他强调每个人都有一个内在的自由，即使身在囹圄也可以保持内心的自由和尊严。',
+            link:'file:///D:/HTMLCSS/%E6%9F%A5%E7%9C%8B%E6%96%87%E7%AB%A01.html'
+          },
+          {
+            title: '前端开发知识分享',
+            content: '前端开发是指构建和实现用户在 Web 或移动设备上看到的界面及交互体验的技术。它包含了 HTML、CSS 和 JavaScript 三个方面的知识。\n'+
+
+                     'HTML（超文本标记语言）是用来描述网页内容的标记语言，它可以将网页分为不同的区块，并对这些区块加以描述和定义。HTML 中使用各种标签(tag)来表示页面中不同的内容以及页面结构，并通过属性(attribute)来指定这些内容/结构的属性。常见的 HTML 标签有标题（h1-h6）、段落（p）、文本（span, strong, em）等。\n'+
+
+                     'CSS（层叠样式表）用于控制网页的展示效果，如字体、颜色、位置、大小等视觉效果。使用 CSS 可以对 HTML 中的元素进行样式定义和布局。在 CSS 中，通常使用选择器来匹配 HTML 元素，并通过属性来控制元素的样式和布局。\n'+
+
+                     'JavaScript 是一种与 HTML 和 CSS 配合使用的编程语言，利用它使我们能够让页面呈现出更加复杂的交互和动态效果。JavaScript 能够与用户的操作交互，实现页面效果的实时响应和动态刷新。同时，它也支持与服务器的交互，例如通过 Ajax 技术实现异步加载数据和向服务器提交数据。\n'+
+
+                     '此外，前端开发还包括响应式设计、移动端开发、性能优化等方面的知识。响应式设计是一种基于不同设备分辨率的自适应设计方式，使得网站可以在各种设备上显示出最佳效果。移动端开发则关注于如何在移动设备上提供流畅的用户体验，包括响应速度、手势交互等。性能优化则是为了提高页面的性能，减少页面加载时间和资源消耗。',
+            link:'file:///D:/HTMLCSS/%E6%9F%A5%E7%9C%8B%E6%96%87%E7%AB%A01%20copy.html'
+          },
+          {
+            title: '《樱桃小丸子》分享',
+            content: '樱桃小丸子》是一部非常经典的日本动漫，它讲述了一个普通的小学生小丸子以及她在家庭、学校和社区中的生活故事。在这个故事中，我看到了很多值得我们学习的东西。\n'+
+
+                     '首先，小丸子非常善良、坦率、乐观和勤奋。她总是积极面对学校、家庭和社区的各种困难和挑战。在生活中，我们也应该像小丸子一样，保持积极的态度，勇敢地面对每一个挑战。\n'+
+
+                     '其次，小丸子的父母非常爱她，并为了她的成长而不断努力工作。他们虽然有时候会犯错误，但最终都能通过爱和理解来解决问题。家庭是孩子成长的重要环境，父母的爱和关怀可以让孩子感到温暖和安全。\n'+
+
+                     '最后，小丸子的朋友们也非常可爱，他们相互帮助，共同成长。友情是人类最珍贵的财富之一，我们也应该像小丸子的朋友一样，在生活中珍惜友情，相互扶持，共同进步。',
+            link:'file:///D:/HTMLCSS/%E6%9F%A5%E7%9C%8B%E6%96%87%E7%AB%A01%20copy%203.html'
+          },
+          {
+            title: '软工专业学生职业规划',
+            content: '了解市场需求：软件行业一直是高薪职业之一，但不同的职位在市场上的需求和薪资水平也有所不同。因此，要及早了解软件行业的趋势和就业前景，选择适合自己的职业方向。\n'+
+
+                     '学习专业知识：软件工程是一门技术性很强的学科，掌握专业知识是必要的。建议多参加一些项目实践和实习，增加实践经验，提高技能水平。\n'+
+
+                     '了解编程语言：掌握各类编程语言，对于软件工程师来说非常重要。尤其是掌握常用的语言如Java、Python、C++等，可以提高就业竞争力。\n'+
+
+                     '提高软件设计能力：软件设计是软件开发过程中最为关键的一环，学习和提高软件设计能力可以提高工作效率、降低开发成本，并提高代码质量。\n'+
+
+                     '学习团队协作：软件开发通常是一个团队协作的过程，了解团队协作和沟通技巧，可以让你更好地融入团队，并在团队中发挥作用。\n'+
+
+                     '推荐学习管理学：对于将来希望有一定的管理岗位，或者开创自己的公司，学习管理学是非常重要的。了解管理学，可以为你日后的职业发展打下基础。\n'+
+
+                     '维护网络社交：互联网时代，网络社交已经成为一种非常重要的人际交往方式。通过社交平台和网络社区，可以结识更多软件工程领域的专业人士，获取更多职业机会和学习资源。\n'+
+
+                     '持续学习：计算机科学和软件工程是一个不断变化和进步的领域。要保持持续学习的态度，关注业界最新技术和趋势，持续提高自己的竞争力。',
+            link:'file:///D:/HTMLCSS/%E6%9F%A5%E7%9C%8B%E6%96%87%E7%AB%A01%20copy%203.html'
+          },
+          {
+            title: '以此文献给我的高中',
+            content: '高中生活是人生中非常重要的一个阶段，它承载着我们很多重要的回忆和经历。对于我来说，回忆起高中生活，总会有一点点怀念和感慨。\n'+
+
+                     '首先，我怀念那种每天早上六点起床去上学的感觉。虽然当时很痛苦，但现在想来却觉得那种感觉很特别，充满了奋斗和拼搏的气息，也让我更加珍惜时间和生命。\n'+
+
+                     '其次，我怀念那些和同学们在一起度过的时光。高中生活中，我们会遇到很多不同的人，建立起很多美好的友谊。在学校里上课、考试、打篮球、唱歌等等，每一件事情都会带给我们不同的乐趣和体验。\n'+
+
+                     '最后，我还怀念那些老师的教诲和指导。高中是我们成长的关键时期，老师的言传身教对我们启示深远。他们不仅教我们知识，还传授给我们做人的道理和处世的智慧，这些都是会终身受益的。\n'+
+
+                     '虽然高中生活有时候苦涩，但它却是我们成长过程中不可缺少的一部分，它让我们学会了坚强和勇敢，收获了友情和爱情。回忆起那些美好的时光，我会流下感动的泪水，也更加珍惜现在的生活，努力让每一天都能过得更加精彩和有意义。',
+            link:'file:///D:/HTMLCSS/%E6%9F%A5%E7%9C%8B%E6%96%87%E7%AB%A01%20copy%204.html'
+          }
+        ];
+    
+        function search() {
+          var keyword = document.getElementById('keyword').value.trim();
+          var results = document.getElementById('results');
+    
+          // 清空之前的搜索结果
+          results.innerHTML = '';
+    
+          // 根据关键词匹配文章标题和内容
+          var regex = new RegExp(keyword, 'ig'); // i 表示忽略大小写，g 表示全局匹配
+          for (var i = 0; i < articles.length; i++) {
+            var article = articles[i];
+    
+            if (regex.test(article.title) || regex.test(article.content)) {
+              var li = document.createElement('li');
+              
+              var title = document.createElement('h3');
+              title.textContent = article.title;
+              li.appendChild(title);
+              
+              var content = document.createElement('p');
+              content.innerHTML = article.content;
+              li.appendChild(content);
+              
+              var link = document.createElement('a');
+              link.href = article.link; // 添加你希望点击后跳转的链接地址
+              link.textContent = '阅读全文';
+              link.style.textDecoration='none';
+              li.appendChild(link);
+              
+              results.appendChild(li);
+    
+              // 高亮显示关键字
+              highlightKeywords(li, keyword);
+            }
+          }
+    
+          // 如果没有匹配结果，则显示未找到提示
+          if (results.children.length === 0) {
+            var li = document.createElement('li');
+            li.textContent = '未找到匹配的文章';
+            results.appendChild(li);
+          }
+        }
+    
+        function highlightKeywords(element, keyword) {
+          var regex = new RegExp('(' + keyword + ')', 'ig'); // i 表示忽略大小写，g 表示全局匹配
+          var nodes = element.childNodes;//element是通过参数传递进来的
+    
+          for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i];
+    
+            if (node.nodeType === Node.TEXT_NODE) {//判断是否是文本节点
+              var matches = node.textContent.match(regex);
+    
+              if (matches) {
+                var fragment = document.createDocumentFragment();
+    
+                matches.forEach(function (match) {
+                  var span = document.createElement('span');
+                  span.className = 'highlight';
+                  span.textContent = match;
+                  fragment.appendChild(span);
+                });
+    
+                node.parentNode.replaceChild(fragment, node); // 替换节点
+              }
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              highlightKeywords(node, keyword); // 递归处理子元素
+            }
+          }
+        }
+      </script>
+</body>
+</html>
